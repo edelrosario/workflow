@@ -9,7 +9,6 @@ myApp.controller('MainCtrl', function ($scope){
     {"text":"Learn node", "prio": "Someday"}
   ];
   $scope.newItem = {};
-  //$scope.todos = ["Learn Angular", "Learn node"];
   $scope.newItem = "";
   $scope.totalItems = 2;
   
