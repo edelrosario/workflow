@@ -3,7 +3,7 @@
 var myApp = angular.module('app', []);
 
 myApp.controller('MainCtrl', function ($scope){
-  $scope.priorities = ["Now", "Tomorrow", "Someday"]
+  $scope.priorities = ["Now", "Tomorrow", "Someday"];
   $scope.todos = [
     {"text":"Learn Angular", "prio":"Now", "done":true, "editable": false},
     {"text":"Learn node", "prio": "Someday", "done":false, "editable": false}
