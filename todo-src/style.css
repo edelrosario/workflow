@@ -13,4 +13,7 @@ h4 {
 }
 .done {
 	text-decoration: line-through;
+
+.form-control {
+	margin-right: 100px;
 }

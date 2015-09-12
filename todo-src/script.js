@@ -9,6 +9,7 @@ myApp.controller('MainCtrl', function ($scope){
     {"text":"Learn node", "prio": "Someday", "done":false, "editable": false}
   ];
   $scope.newItem = {};
+  $scope.newItem = "";
   $scope.totalItems = 2;
 
   $scope.pressEnter = function(keyEvent) {
