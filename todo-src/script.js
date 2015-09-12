@@ -3,13 +3,13 @@
 var myApp = angular.module('app', []);
 
 myApp.controller('MainCtrl', function ($scope){
-  $scope.priorities = ["Now", "Tomorrow", "Someday"]
+  $scope.priorities = ["Now", "Tomorrow", "Someday"];
   $scope.todos = [
     {"text":"Learn Angular", "prio":"Now"},
     {"text":"Learn node", "prio": "Someday"}
   ];
   $scope.newItem = {};
-  $scope.todos = ["Learn Angular", "Learn node"];
+  //$scope.todos = ["Learn Angular", "Learn node"];
   $scope.newItem = "";
   $scope.totalItems = 2;
   
