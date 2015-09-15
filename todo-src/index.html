@@ -38,18 +38,18 @@
         <li class="list-group-item clearfix" ng-repeat="do in todos">
 
           <input type="checkbox" ng-model="do.done" />
-          <span ng-hide="editable[$index]" ng-class="{done: do.done}">{{do.text}}</span>
+          <span ng-hide="do.editable" ng-class="{done: do.done}">{{do.text}}</span>
 
-          <span class="label label-default" ng-hide="editable[$index]">{{do.prio}}</span>
-          <input type="text" style="width:50%" placeholder="{{do.text}}" ng-show="editable[$index]" ng-model="do.text">
-          <select ng-show="editable[$index]" ng-model="do.prio" required>
+          <span class="label label-default" ng-hide="do.editable">{{do.prio}}</span>
+          <input type="text" style="width:50%" placeholder="{{do.text}}" ng-show="do.editable" ng-model="do.text">
+          <select ng-show="do.editable" ng-model="do.prio" required>
             <option value="{{prio}}" ng-repeat="prio in priorities">{{prio}}</option>
           </select>
           <button class="btn btn-danger pull-right" type="button" ng-click="deleteItem(do)">
             <span class="glyphicon glyphicon-trash " aria-hidden="true"></span>
           </button>
-          <button class="btn btn-info pull-right" type="button" ng-click="editable[$index] = true" ng-hide="editable[$index]">Edit</button>
-          <button class="btn btn-info pull-right" type="button" ng-click="saveItem($index)" ng-show="editable[$index]">Save</button>
+          <button class="btn btn-info pull-right" type="button" ng-click="do.editable = true" ng-hide="do.editable">Edit</button>
+          <button class="btn btn-info pull-right" type="button" ng-click="saveItem($index)" ng-show="do.editable">Save</button>
         </li>
       </ul>
 	  <button class="btn btn-danger" type="button" ng-click="clear()">

@@ -5,11 +5,10 @@ var myApp = angular.module('app', []);
 myApp.controller('MainCtrl', function ($scope){
   $scope.priorities = ["Now", "Tomorrow", "Someday"]
   $scope.todos = [
-    {"text":"Learn Angular", "prio":"Now", "done":true},
-    {"text":"Learn node", "prio": "Someday", "done":false}
+    {"text":"Learn Angular", "prio":"Now", "done":true, "editable": false},
+    {"text":"Learn node", "prio": "Someday", "done":false, "editable": false}
   ];
   $scope.newItem = {};
-  $scope.editable = [false, false]
   $scope.totalItems = 2;
 
   $scope.pressEnter = function(keyEvent) {
@@ -21,9 +20,10 @@ myApp.controller('MainCtrl', function ($scope){
   $scope.addItem = function(){
     console.log("in add");
     if ($scope.newItem.text){
+      $scope.newItem.done = false;
+      $scope.newItem.editable = false;
       $scope.todos.push($scope.newItem);
-      $scope.editable.push(false);
-      $scope.newItem = "";
+      $scope.newItem = {};
       $scope.totalItems += 1;
     }
   }
@@ -37,7 +37,7 @@ myApp.controller('MainCtrl', function ($scope){
 
   $scope.saveItem = function(item){
     if($scope.todos[item].text !== "")
-      $scope.editable[item] = false;
+      $scope.todos[item].editable = false;
   }
 
   $scope.clear = function(){
